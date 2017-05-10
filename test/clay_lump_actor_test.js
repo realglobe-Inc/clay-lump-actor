@@ -10,7 +10,9 @@ const sugoHub = require('sugo-hub')
 const sugoCaller = require('sugo-caller')
 const { ok, equal } = require('assert')
 const aport = require('aport')
+const asleep = require('asleep')
 const co = require('co')
+const { scoped } = require('sugo-module-scoped')
 
 describe('clay-lump-actor', function () {
   this.timeout(3000)
@@ -30,7 +32,19 @@ describe('clay-lump-actor', function () {
     const port = yield aport()
     const hub = sugoHub({
       localActors: {
-        db: new ClayLumpActor(lump, {})
+        db: new ClayLumpActor(lump, {
+          decorateModule: (module) => scoped((session) =>
+            Object.keys(module).reduce((methods, name) => Object.assign(methods, {
+              [name]: function methodProxy (...args) {
+                let ok = [ 't01' ].includes(session.token)
+                if (!ok) {
+                  throw new Error('Auth failed!')
+                }
+                return module[ name ](...args)
+              }
+            }), {})
+          )
+        })
       }
     })
 
@@ -40,8 +54,10 @@ describe('clay-lump-actor', function () {
       const db = yield caller.connect('db')
       ok(db)
 
-      const User = db.get('User')
-      const Org = db.get('Org')
+      const session = { token: 't01' }
+
+      const User = db.get('User').with(session)
+      const Org = db.get('Org').with(session)
       ok(User)
       ok(Org)
 
@@ -53,11 +69,24 @@ describe('clay-lump-actor', function () {
       equal(user01AsFirst.name, 'user01')
       equal(user01AsFirst.org.v, 2)
 
-      yield caller.disconnect()
+      {
+        const OrgWithInvalidSession = db.get('Org').with({ token: null })
+        let caught
+        try {
+          yield OrgWithInvalidSession.create({ name: 'hoge' })
+        } catch (e) {
+          caught = e
+        }
+        ok(caught)
+      }
 
+      yield caller.disconnect()
     }
+    yield asleep(100)
 
     yield hub.close()
+
+    yield asleep(100)
   }))
 })
 

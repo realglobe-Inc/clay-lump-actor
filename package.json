@@ -1,6 +1,6 @@
 {
   "name": "clay-lump-actor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "SUGOActor to wrap Clay-Lump",
   "main": "lib",
   "scripts": {

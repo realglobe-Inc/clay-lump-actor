@@ -74,8 +74,21 @@ Usage
 ```javascript
 'use strict'
 
+const clayLump = require('clay-lump')
 const clayLumpActor = require('clay-lump-actor')
 
+async function tryExample () {
+  const lump = clayLump('lump01', {})
+
+  const lumpActor = clayLumpActor(lump, {
+    port: 3000,
+    hostname: 'localhost'
+  })
+
+  await lumpActor.connect()
+}
+
+tryExample().catch((err) => console.error(err))
 ```
 
 
@@ -90,7 +103,7 @@ const clayLumpActor = require('clay-lump-actor')
 
 License
 -------
-This software is released under the [MIT License](https://github.com/realglobe-Inc/clay-lump-actor/blob/master/LICENSE).
+This software is released under the [Apache-2.0 License](https://github.com/realglobe-Inc/clay-lump-actor/blob/master/LICENSE).
 
 <!-- LICENSE End -->
 
@@ -101,6 +114,10 @@ This software is released under the [MIT License](https://github.com/realglobe-I
 Links
 ------
 
++ [ClayDB][clay_d_b_url]
++ [Realglobe, Inc.][realglobe,_inc__url]
 
+[clay_d_b_url]: https://github.com/realglobe-Inc/claydb
+[realglobe,_inc__url]: http://realglobe.jp
 
 <!-- Links End -->

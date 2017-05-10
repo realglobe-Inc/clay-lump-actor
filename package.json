@@ -8,13 +8,16 @@
     "prepare": "node ./ci/build.js"
   },
   "repository": "realglobe-Inc/clay-lump-actor",
-  "keywords": [],
+  "keywords": [
+    "ClayDB",
+    "SUGOActor"
+  ],
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinishi@gmail.com",
     "url": "http://okunishitaka.com"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/realglobe-Inc/clay-lump-actor/issues"
   },
@@ -23,7 +26,8 @@
     "asobj": "^1.5.0",
     "clay-constants": "^3.0.2",
     "co": "^4.6.0",
-    "sugo-actor": "^5.0.2"
+    "sugo-actor": "^5.0.2",
+    "sugo-module-scoped": "^1.0.4"
   },
   "devDependencies": {
     "amocha": "^2.0.0",
@@ -33,11 +37,13 @@
     "ape-tmpl": "^5.0.20",
     "ape-updating": "^4.1.1",
     "aport": "^1.0.0",
+    "asleep": "^1.0.3",
     "clay-lump": "^4.2.1",
     "coz": "^6.0.20",
     "injectmock": "^2.0.0",
     "sugo-caller": "^4.0.2",
-    "sugo-hub": "^6.0.8"
+    "sugo-hub": "^6.0.8",
+    "sugos-travis": "^2.0.7"
   },
   "engines": {
     "node": ">=6",

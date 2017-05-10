@@ -103,7 +103,7 @@ tryExample().catch((err) => console.error(err))
 
 License
 -------
-This software is released under the [MIT License](https://github.com/realglobe-Inc/clay-lump-actor/blob/master/LICENSE).
+This software is released under the [Apache-2.0 License](https://github.com/realglobe-Inc/clay-lump-actor/blob/master/LICENSE).
 
 <!-- LICENSE End -->
 
@@ -114,6 +114,10 @@ This software is released under the [MIT License](https://github.com/realglobe-I
 Links
 ------
 
++ [ClayDB][clay_d_b_url]
++ [Realglobe, Inc.][realglobe,_inc__url]
 
+[clay_d_b_url]: https://github.com/realglobe-Inc/claydb
+[realglobe,_inc__url]: http://realglobe.jp
 
 <!-- Links End -->

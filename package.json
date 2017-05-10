@@ -8,13 +8,16 @@
     "prepare": "node ./ci/build.js"
   },
   "repository": "realglobe-Inc/clay-lump-actor",
-  "keywords": [],
+  "keywords": [
+    "ClayDB",
+    "SUGOActor"
+  ],
   "author": {
     "name": "Taka Okunishi",
     "email": "okunishinishi@gmail.com",
     "url": "http://okunishitaka.com"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/realglobe-Inc/clay-lump-actor/issues"
   },

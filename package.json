@@ -1,0 +1,46 @@
+{
+  "name": "clay-lump-actor",
+  "version": "1.0.0",
+  "description": "SUGOActor to wrap Clay-Lump",
+  "main": "lib",
+  "scripts": {
+    "test": "node ./ci/test.js",
+    "prepare": "node ./ci/build.js"
+  },
+  "repository": "realglobe-Inc/clay-lump-actor",
+  "keywords": [],
+  "author": {
+    "name": "Taka Okunishi",
+    "email": "okunishinishi@gmail.com",
+    "url": "http://okunishitaka.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/realglobe-Inc/clay-lump-actor/issues"
+  },
+  "homepage": "https://github.com/realglobe-Inc/clay-lump-actor#readme",
+  "dependencies": {
+    "asobj": "^1.5.0",
+    "clay-constants": "^3.0.2",
+    "co": "^4.6.0",
+    "sugo-actor": "^5.0.2"
+  },
+  "devDependencies": {
+    "amocha": "^2.0.0",
+    "ape-formatting": "^1.0.2",
+    "ape-releasing": "^4.0.4",
+    "ape-tasking": "^4.0.9",
+    "ape-tmpl": "^5.0.20",
+    "ape-updating": "^4.1.1",
+    "aport": "^1.0.0",
+    "clay-lump": "^4.2.1",
+    "coz": "^6.0.20",
+    "injectmock": "^2.0.0",
+    "sugo-caller": "^4.0.2",
+    "sugo-hub": "^6.0.8"
+  },
+  "engines": {
+    "node": ">=6",
+    "npm": ">=4"
+  }
+}
